@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AdminLayout from "./components/layouts/AdminLayout";
 import HospitalLayout from "./components/layouts/HospitalLayout";
+import Home from "./pages/Home";
 
 // Auth Pages
 import AdminLogin from "./pages/auth/AdminLogin";
@@ -52,8 +53,8 @@ const App = () => (
       />
       <BrowserRouter>
         <Routes>
-          {/* Default redirect */}
-          <Route path="/" element={<Navigate to="/admin/login" replace />} />
+          {/* Public Home */}
+          <Route path="/" element={<Home />} />
           
           {/* Auth Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -83,7 +84,7 @@ const App = () => (
             <Route path="chatbot" element={<HospitalChatbot />} />
           </Route>
           
-          <Route path="*" element={<Navigate to="/admin/login" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
