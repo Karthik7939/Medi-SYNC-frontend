@@ -41,18 +41,18 @@ const AdminSidebar = () => {
   const { open: sidebarOpen } = useSidebar();
 
   return (
-    <Sidebar className="border-r border-sidebar-border w-64" collapsible="icon">
+    <Sidebar className="w-64 border-r border-sidebar-border bg-card/80 backdrop-blur-sm shadow-sm" collapsible="icon">
       <SidebarHeader className="border-b border-sidebar-border p-4">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary">
+        <div className="flex items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-card">
             <Network className="h-5 w-5 text-white" />
           </div>
           {sidebarOpen && (
             <div>
-              <h1 className="bg-gradient-primary bg-clip-text text-lg font-bold text-transparent">
+              <h1 className="bg-gradient-primary bg-clip-text text-lg font-semibold tracking-tight text-transparent">
                 Medi-SYNC
               </h1>
-              <p className="text-xl font-semibold text-sidebar-foreground/80">Admin Portal</p>
+              <p className="text-sm font-medium text-sidebar-foreground/70">Admin Portal</p>
             </div>
           )}
         </div>
@@ -68,11 +68,11 @@ const AdminSidebar = () => {
                   <SidebarMenuButton asChild isActive={location.pathname === item.url}>
                     <NavLink
                       to={item.url}
-                      className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-sidebar-foreground transition-smooth hover:bg-sidebar-accent"
-                      activeClassName="bg-gradient-primary text-white hover:bg-gradient-primary"
+                      className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-sidebar-foreground transition-all hover:bg-sidebar-accent/70 hover:translate-x-1"
+                      activeClassName="bg-gradient-primary text-white hover:bg-gradient-primary shadow-sm"
                     >
                       <item.icon className="h-5 w-5" />
-                      <span className="text-[15px]">{item.title}</span>
+                      <span className="text-[15px] font-medium tracking-tight">{item.title}</span>
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

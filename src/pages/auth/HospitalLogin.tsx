@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const HospitalLogin = () => {
   const navigate = useNavigate();
@@ -23,7 +24,10 @@ const HospitalLogin = () => {
   };
 
   return (
-    <div className="flex min-h-screen">
+    <div className="relative flex min-h-screen">
+      <div className="absolute right-4 top-4 z-10">
+        <ThemeToggle />
+      </div>
       {/* Left side - Hero Section */}
       <div className="hidden flex-1 items-center justify-center bg-gradient-to-br from-blue-ocean to-pink-deep p-8 lg:flex">
         <div className="max-w-lg space-y-6 text-white">

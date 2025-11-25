@@ -2,6 +2,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Bell, LogOut as DoorOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const HospitalHeader = () => {
   const navigate = useNavigate();
@@ -21,6 +22,8 @@ const HospitalHeader = () => {
           <Bell className="h-5 w-5" />
         </Button>
         
+        <ThemeToggle />
+
         <Button
           variant="ghost"
           size="icon"

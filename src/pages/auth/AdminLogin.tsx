@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Network, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -24,6 +25,9 @@ const AdminLogin = () => {
 
   return (
     <div className="relative flex min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+      <div className="absolute right-4 top-4 z-10">
+        <ThemeToggle />
+      </div>
       {/* Subtle animated background accents */}
       <div className="pointer-events-none absolute -right-24 top-[-80px] h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -left-24 bottom-[-80px] h-72 w-72 rounded-full bg-accent/10 blur-3xl" />

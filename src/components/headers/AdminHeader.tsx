@@ -2,6 +2,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Bell, LogOut, LogOut as DoorOpen, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const AdminHeader = () => {
   const navigate = useNavigate();
@@ -27,6 +28,8 @@ const AdminHeader = () => {
           </span>
         </Button>
         
+        <ThemeToggle />
+
         <Button
           variant="ghost"
           size="icon"

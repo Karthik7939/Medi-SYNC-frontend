@@ -34,7 +34,22 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
+      <Sonner
+        position="top-right"
+        richColors
+        toastOptions={{
+          classNames: {
+            toast:
+              "bg-card/90 backdrop-blur border border-border/80 shadow-lg shadow-primary/5 text-foreground", 
+            title: "text-sm font-semibold", 
+            description: "text-xs text-muted-foreground", 
+            actionButton:
+              "bg-primary text-primary-foreground hover:bg-primary/90", 
+            cancelButton:
+              "bg-muted text-muted-foreground hover:bg-muted/80",
+          },
+        }}
+      />
       <BrowserRouter>
         <Routes>
           {/* Default redirect */}
