@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Medi-SYNC Color Palette */
+    --navy-dark: 207 100% 9%;        /* #041B2D */
+    --blue-strong: 208 100% 30%;     /* #004E9A */
+    --blue-ocean: 207 60% 55%;       /* #428CD4 */
+    --pink-soft: 323 100% 80%;       /* #FF9CDA */
+    --pink-deep: 329 81% 58%;        /* #EA4692 */
+    
+    /* Base colors using palette */
+    --background: 0 0% 100%;
+    --foreground: 207 100% 9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 207 100% 9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 100% 9%;
+    
+    --primary: 208 100% 30%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 207 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 329 81% 58%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 207 100% 9%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 208 100% 30%;
+    
+    --radius: 1rem;
+    
+    /* Sidebar colors */
+    --sidebar-background: 207 100% 9%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 208 100% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 207 60% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 207 100% 15%;
+    --sidebar-ring: 207 60% 55%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(208 100% 30%), hsl(329 81% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(207 60% 55%), hsl(323 100% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(207 100% 9%), hsl(208 100% 30%));
+    --gradient-card: linear-gradient(145deg, hsl(208 100% 30% / 0.1), hsl(329 81% 58% / 0.1));
+    
+    /* Shadows */
+    --shadow-premium: 0 20px 60px -15px hsl(208 100% 30% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(208 100% 30% / 0.2);
+    --shadow-glow: 0 0 40px hsl(329 81% 58% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 207 100% 9%;
+    --foreground: 0 0% 100%;
+    
+    --card: 207 100% 12%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 207 100% 12%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 207 60% 55%;
+    --primary-foreground: 207 100% 9%;
+    
+    --secondary: 208 100% 30%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 329 81% 58%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 207 100% 15%;
+    --muted-foreground: 207 40% 70%;
+    
+    --border: 207 100% 15%;
+    --input: 207 100% 15%;
+    --ring: 207 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/80 dark:bg-card/80 border border-white/20;
+  }
+  
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(329 81% 58% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(329 81% 58% / 0.6);
+    }
+  }
+}
